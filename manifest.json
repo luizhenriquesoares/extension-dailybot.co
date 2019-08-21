@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "reportBot",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://app.dailybot.co/followups/daily-report*"],
+      "js": [
+        "lib/require.js", 
+        "lib/jquery-3.4.1.min.js",
+        "app/core.js"
+        ]
+    }
+  ],
+  "background": {
+    "scripts": ["app/background.js"],
+    "persistent": false
+  }
+}
