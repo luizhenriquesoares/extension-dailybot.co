@@ -7,6 +7,21 @@ const Types = {
 }
 /*****************************************************/
 
+const puppeteer = require('puppeteer');
+
+/**
+ * 
+ * Filter report 
+ * 
+ * @param {*} username 
+ * @param {*} reportArr 
+ */
+const filterReport = async (username, reportArr) => {
+    return new Promise((resolve, reject) => { 
+        resolve(reportArr.filter(item => item.username === username)[0]); 
+    });
+}
+
 /**
  * 
  * Return all descriptions 
@@ -98,7 +113,11 @@ const bootstrap = async () => {
 
 
 setTimeout(() => {
-    bootstrap().then((reportBot) => {
-        console.log(reportBot);
+    let username = 'Leandro Sander Augusto Manzieri';
+    bootstrap().then(async (reportBot) => {
+        const obj = await filterReport(username, reportBot);
+        console.log(obj);
+
+        
     });
 }, 3000);

@@ -8,6 +8,7 @@
       "js": [
         "lib/require.js", 
         "lib/jquery-3.4.1.min.js",
+        "lib/puppeteer-web.js",
         "app/core.js"
         ]
     }
